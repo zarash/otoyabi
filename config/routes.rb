@@ -1,4 +1,7 @@
 Bama::Application.routes.draw do
+  resources :brands
+
+
   resources :cities
 
 
