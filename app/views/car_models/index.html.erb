@@ -12,7 +12,7 @@
 <% @car_models.each do |car_model| %>
   <tr>
     <td><%= car_model.name %></td>
-    <td><%= car_model.brand %></td>
+    <td><%= car_model.brand.name %></td>
     <td><%= link_to 'Show', car_model %></td>
     <td><%= link_to 'Edit', edit_car_model_path(car_model) %></td>
     <td><%= link_to 'Destroy', car_model, method: :delete, data: { confirm: 'Are you sure?' } %></td>

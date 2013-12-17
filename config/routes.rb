@@ -1,4 +1,7 @@
 Bama::Application.routes.draw do
+  resources :car_colors
+
+
   resources :car_models
 
 
