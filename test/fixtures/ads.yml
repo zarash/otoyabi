@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  brand: 
+  car_model: 
+  user: 
+  girbox: MyString
+  internal_color: 
+  cover_color: 
+  price: 1
+  fuel_type: MyString
+  mileage: 1
+  year: MyString
+  detail: MyText
+  view_count: 1
+
+two:
+  brand: 
+  car_model: 
+  user: 
+  girbox: MyString
+  internal_color: 
+  cover_color: 
+  price: 1
+  fuel_type: MyString
+  mileage: 1
+  year: MyString
+  detail: MyText
+  view_count: 1

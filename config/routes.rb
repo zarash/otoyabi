@@ -1,4 +1,7 @@
 Bama::Application.routes.draw do
+  resources :ads
+
+
   devise_for :users
 
   resources :car_colors
