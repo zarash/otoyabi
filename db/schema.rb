@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131218170841) do
+ActiveRecord::Schema.define(:version => 20131218173510) do
 
   create_table "ads", :force => true do |t|
     t.integer  "brand_id"
@@ -42,12 +42,6 @@ ActiveRecord::Schema.define(:version => 20131218170841) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "car_colors", :force => true do |t|
-    t.string   "color"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "car_models", :force => true do |t|
     t.string   "name"
     t.integer  "brand_id"
@@ -61,6 +55,12 @@ ActiveRecord::Schema.define(:version => 20131218170841) do
     t.string   "name"
     t.float    "latitude"
     t.float    "longitude"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "colors", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
