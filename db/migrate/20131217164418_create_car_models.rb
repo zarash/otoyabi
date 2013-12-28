@@ -6,6 +6,5 @@ class CreateCarModels < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :car_models, :brand_id
   end
 end

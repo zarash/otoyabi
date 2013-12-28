@@ -10,30 +10,25 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :brand %><br />
-    <%= f.text_field :brand %>
+    <%= label_tag :temp, :brand %><br />
+    <%= collection_select( :temp, :brand_id, Brand.order, :id, :name, include_blank: 'entekhab konid') %>
   </div>
   <div class="field">
     <%= f.label :car_model %><br />
-    <%= f.text_field :car_model %>
-  </div>
-  <div class="field">
-    <%= f.label :user %><br />
-    <%= f.text_field :user %>
+    <%= f.grouped_collection_select( :car_model_id, Brand.order,:car_models,:name ,:id, :name, include_blank: 'entekhab konid') %>
   </div>
   <div class="field">
     <%= f.label :girbox %><br />
-    <%= f.text_field :girbox %>
+    <%= f.select :girbox, ['dandei','aoutomat'] %>
   </div>
   <div class="field">
     <%= f.label :internal_color %><br />
-    <%= f.text_field :internal_color %>
+    <%= f.collection_select(:internal_color_id, Color.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :cover_color %><br />
-    <%= f.text_field :cover_color %>
+    <%= f.collection_select(:cover_color_id, Color.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :price %><br />
@@ -41,7 +36,7 @@
   </div>
   <div class="field">
     <%= f.label :fuel_type %><br />
-    <%= f.text_field :fuel_type %>
+    <%= f.select :fuel_type, ['benzin', 'gaz'] %>
   </div>
   <div class="field">
     <%= f.label :mileage %><br />

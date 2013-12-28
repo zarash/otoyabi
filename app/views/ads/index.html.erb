@@ -21,12 +21,12 @@
 
 <% @ads.each do |ad| %>
   <tr>
-    <td><%= ad.brand %></td>
-    <td><%= ad.car_model %></td>
-    <td><%= ad.user %></td>
+    <td><%= ad.car_model.brand.name %></td>
+    <td><%= ad.car_model.name %></td>
+    <td><%= ad.user.name %></td>
     <td><%= ad.girbox %></td>
-    <td><%= ad.internal_color %></td>
-    <td><%= ad.cover_color %></td>
+    <td><%= ad.internal_color.name %></td>
+    <td><%= ad.cover_color.name %></td>
     <td><%= ad.price %></td>
     <td><%= ad.fuel_type %></td>
     <td><%= ad.mileage %></td>
@@ -43,3 +43,64 @@
 <br />
 
 <%= link_to 'New Ad', new_ad_path %>
+
+
+        </select>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span id="ctl00_cphMain_UserAdInfoNew1_lbl4" style="color:Black;font-family:Tahoma;font-size:8pt;">توضیحات</span>
+                                </td>
+                                <td style="text-align: right; vertical-align: top" colspan="2" rowspan="3">
+                                    <textarea name="ctl00$cphMain$UserAdInfoNew1$txtDescr" rows="2" cols="20" id="ctl00_cphMain_UserAdInfoNew1_txtDescr" tabindex="12" class="charEnter" onblur="javascript:return limitCharsLength(this, 500)" onchange="javascript : return limitCharsLength(this, 500)" onkeypress="javascript: return limitCharsLength(this,500);" style="height:90px;width:300px;font: normal 9pt tahoma;">
+</textarea>
+                                    <div style="margin-right: 162px;">
+                                        <label id="characters"></label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left;">
+                                    <span id="ctl00_cphMain_UserAdInfoNew1_lbl21" style="color:Black;font-family:Tahoma;font-size:8pt;">رنگ داخل</span>
+                                </td>
+                                <td style="text-align: right; width: 106px; vertical-align: top">
+                                    <select name="ctl00$cphMain$UserAdInfoNew1$ddlInteriorColor" id="ctl00_cphMain_UserAdInfoNew1_ddlInteriorColor" tabindex="6">
+انتخاب كنيد
+نامشخص
+آبي
+قرمز
+سبز
+نارنجي
+سفيد
+مشکي
+آلبالوئی
+اخرائی
+>اطلسی
+>بادمجانی
+>بژ
+>بنفش
+>پوست پیازی
+>خاکستری
+>خاکی
+>زرد
+>زرشکی
+>سربی
+>سرمه ای
+>صورتی
+>طلائی
+>عدسی
+>عنابی
+>قهوه ای
+>کرم
+>مسی
+>نقرآبی
+>نقره ای
+>نوک مدادی
+>یشمی
+>مارون
+>طوسی
+>زیتونی
+>شتری
+>برنز
+>دلفینی
+>گیلاسی
+>یاسی

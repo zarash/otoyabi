@@ -11,15 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131218173510) do
+ActiveRecord::Schema.define(:version => 20131224162718) do
+
+  create_table "ad_images", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
 
   create_table "ads", :force => true do |t|
-    t.integer  "brand_id"
     t.integer  "car_model_id"
     t.integer  "user_id"
-    t.string   "girbox"
     t.integer  "internal_color_id"
     t.integer  "cover_color_id"
+    t.string   "girbox"
     t.integer  "price"
     t.string   "fuel_type"
     t.integer  "mileage"
@@ -29,12 +37,6 @@ ActiveRecord::Schema.define(:version => 20131218173510) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
-
-  add_index "ads", ["brand_id"], :name => "index_ads_on_brand_id"
-  add_index "ads", ["car_model_id"], :name => "index_ads_on_car_model_id"
-  add_index "ads", ["cover_color_id"], :name => "index_ads_on_cover_color_id"
-  add_index "ads", ["internal_color_id"], :name => "index_ads_on_internal_color_id"
-  add_index "ads", ["user_id"], :name => "index_ads_on_user_id"
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -48,8 +50,6 @@ ActiveRecord::Schema.define(:version => 20131218173510) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "car_models", ["brand_id"], :name => "index_car_models_on_brand_id"
 
   create_table "cities", :force => true do |t|
     t.string   "name"

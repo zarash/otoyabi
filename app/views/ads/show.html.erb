@@ -2,17 +2,17 @@
 
 <p>
   <b>Brand:</b>
-  <%= @ad.brand %>
+  <%= @ad.car_model.brand.name %>
 </p>
 
 <p>
   <b>Car model:</b>
-  <%= @ad.car_model %>
+  <%= @ad.car_model.name %>
 </p>
 
 <p>
   <b>User:</b>
-  <%= @ad.user %>
+  <%= @ad.user.name %>
 </p>
 
 <p>
@@ -22,12 +22,12 @@
 
 <p>
   <b>Internal color:</b>
-  <%= @ad.internal_color %>
+  <%= @ad.internal_color.name %>
 </p>
 
 <p>
   <b>Cover color:</b>
-  <%= @ad.cover_color %>
+  <%= @ad.cover_color.name %>
 </p>
 
 <p>
