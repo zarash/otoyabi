@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131224162718) do
+ActiveRecord::Schema.define(:version => 20131229145031) do
 
   create_table "ad_images", :force => true do |t|
     t.string   "image_file_name"
@@ -60,6 +60,18 @@ ActiveRecord::Schema.define(:version => 20131224162718) do
   end
 
   create_table "colors", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "girboxes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "states", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
