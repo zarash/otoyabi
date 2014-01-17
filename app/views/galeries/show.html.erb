@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Galery name:</b>
+  <%= @galery.galery_name %>
+</p>
+
+<p>
+  <b>User writer name:</b>
+  <%= @galery.user_writer_name %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @galery.state_id %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @galery.address %>
+</p>
+
+<p>
+  <b>Tel:</b>
+  <%= @galery.tel %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @galery.email %>
+</p>
+
+<p>
+  <b>Details:</b>
+  <%= @galery.details %>
+</p>
+
+<p>
+  <b>Manager:</b>
+  <%= @galery.manager_id %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @galery.city_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_galery_path(@galery) %> |
+<%= link_to 'Back', galeries_path %>

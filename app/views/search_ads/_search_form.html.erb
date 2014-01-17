@@ -1,0 +1,61 @@
+<%= form_for @search_ad, method: :get do |f| %>
+	<p>
+    <%= f.label :temp, :brand %>
+    <%= f.select( :brand_id, Brand.all.map{|p| [ p.name, p.id ] },  { include_blank: true }, {include_blank: 'entekhab konid'}) %>
+	</p>
+
+	<p>
+    <%= f.label :car_model %>
+    <%= f.grouped_collection_select( :car_model_id, Brand.order,:car_models,:name ,:id, :name, include_blank: 'entekhab konid') %>
+    <!--  help tag -->
+    <%= grouped_collection_select :temp, :car_model_id, Brand.order,:car_models,:name ,:id, :name %>
+	 </p>
+	 	<p>
+	 	<%= f.label :year_from, "Year_from" %>
+	 	<%= f.select :year_from, 1990..2014, selected: 1990 %>
+	 </p>
+		<p>
+		 	<%= f.label :year_to, "Year_to" %>
+		 	<%= f.select :year_to, 2000..2014, selected: 2014 %>
+	 </p>
+	<p>
+	  <%= f.label :price_from, "price_from" %>
+	  <%= f.text_field :price_from %>
+	</p>
+	<p>
+	  <%= f.label :price_to, "price_to" %>
+	  <%= f.text_field :price_to %>
+	</p>
+	<p>
+	  <%= f.label :mileage_from, "mileage_from" %>
+	  <%= f.text_field :mileage_from %>
+	</p>
+	<p>
+	  <%= f.label :mileage_to, "mileage_to" %>
+	  <%= f.text_field :mileage_to %>
+	</p>
+ 	<p>
+	 	<%= f.radio_button :girbox ,'d' %>dandei 
+	 	<%= f.radio_button :girbox ,'a' %> auto
+	</p>
+	 <p>
+	 	<%= f.label :fuel_type %> 
+	 	<%= f.select :fuel_type, [ ['all',''],['benzin','bz'], ['gaz','ga'], ['hayberid', 'h'], ['gazol', 'gl']] %> 
+	</p>
+	<p>
+	    <%= f.label :exchange %>
+	    <%= f.select :exchange, [ ['all',''] , ['moaveze',1] , ['faghat forush',0] ] %> 
+	</p>
+
+ 	<p>
+	 	<%= f.label :car_status %> 
+	 	<%= f.select :car_status , [['all',''] , 'karkarde' , 'sefr' , 'havale' ] %>
+	 </p>
+	 <p>
+	    <%= f.label :list_order %>
+	    <%= f.select :list_order, [['new cars',"new_cars"] , ['Old Car','old_cars'],['new ad','new_ads' ] , ['expensive' ,'exp' ] ,['cheaper', 'cheap' ] ] %> 
+	</p>
+	<p>
+	 	<%= f.submit "Search" %>
+ </p>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131229145031) do
+ActiveRecord::Schema.define(:version => 20140111173313) do
 
   create_table "ad_images", :force => true do |t|
     t.string   "image_file_name"
@@ -27,15 +27,18 @@ ActiveRecord::Schema.define(:version => 20131229145031) do
     t.integer  "user_id"
     t.integer  "internal_color_id"
     t.integer  "cover_color_id"
-    t.string   "girbox"
+    t.string   "girbox",            :limit => 1,  :default => "d"
+    t.integer  "city_id"
+    t.string   "fuel_type",         :limit => 2,  :default => "bz"
     t.integer  "price"
-    t.string   "fuel_type"
     t.integer  "mileage"
-    t.string   "year"
+    t.integer  "year"
     t.text     "detail"
     t.integer  "view_count"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
+    t.boolean  "exchange",                        :default => false
+    t.string   "car_status",        :limit => 10, :default => "karkarde"
   end
 
   create_table "brands", :force => true do |t|
@@ -61,14 +64,23 @@ ActiveRecord::Schema.define(:version => 20131229145031) do
 
   create_table "colors", :force => true do |t|
     t.string   "name"
+    t.integer  "ad_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "girboxes", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "galeries", :force => true do |t|
+    t.string   "galery_name"
+    t.string   "user_writer_name"
+    t.integer  "state_id"
+    t.string   "address"
+    t.string   "tel"
+    t.string   "email"
+    t.string   "details"
+    t.integer  "manager_id"
+    t.integer  "city_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "states", :force => true do |t|

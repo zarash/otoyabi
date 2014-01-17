@@ -4,7 +4,6 @@
 jQuery ->
 	$('#ad_car_model_id').parent().hide()
 	car_models = $('#ad_car_model_id').html()
-	console.log(car_models)
 	$('#temp_brand_id').change ->
 		brand = $('#temp_brand_id :selected').text()
 		options = $(car_models).filter("optgroup[label='#{brand}']").html()
@@ -14,3 +13,11 @@ jQuery ->
 		else
 			$('#ad_car_model_id').empty()
 			$('#ad_car_model_id').parent().hide()
+
+	# make mileage disable
+	$('.mile').click ->
+		if $(this).val() == 'karkarde' 
+			$('#ad_mileage').removeAttr("disabled")
+		else 
+			$('#ad_mileage').attr("disabled", 'disabled')
+			$('#ad_mileage').val('')

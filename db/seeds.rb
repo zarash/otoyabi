@@ -48,3 +48,8 @@
 	{id: 39, name: 'گیلاسی' },
 	{id: 40, name: 'یاسی' }
 ])
+
+ brands = Brand.create([
+	{id: 1, name: 'آئودی' }
+	
+])

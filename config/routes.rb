@@ -1,4 +1,10 @@
 Bama::Application.routes.draw do
+  
+  resources :search_ads , only: [:index]
+  
+  resources :galeries
+
+
   resources :states
 
 
@@ -12,7 +18,7 @@ Bama::Application.routes.draw do
 
   resources :car_colors
 
-  root :to => 'car_models#index'
+  root :to => 'ads#index'
 
   resources :car_models
 
