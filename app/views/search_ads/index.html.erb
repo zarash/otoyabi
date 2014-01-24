@@ -1,6 +1,7 @@
 
 <%= render 'search_form' %>
-<%= @ads.size %> <hr>
+<%= will_paginate(@ads , renderer: BootstrapPagination::Rails, class: "pagination pagination-sm", previous_label: "<<" , next_label: ">>") %>
+<%#= @ads.size %> <hr>
 <ul>
 	<% if @ads.any? %>
 		<% @ads.each do |ad| %>
@@ -9,7 +10,7 @@
 				<%= ad.car_model.name %><br>
 				<%= ad.year%><br>
 				<%= ad.detail%><br>
-				<%= ad.updated_at%><br>
+				<%= time_ago_in_words(ad.updated_at) + " ago" %><br>
 				<%= ad.price %> <hr>
 			</li>
 		<% end %>	

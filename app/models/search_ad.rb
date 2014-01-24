@@ -58,5 +58,5 @@ class SearchAd
 	def self.inspect
 	  "#<#{ self.to_s} #{ self.attributes.collect{ |e| ":#{ e }" }.join(', ') }>"
 	end
-
+  
 end

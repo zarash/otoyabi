@@ -9,11 +9,11 @@
     <%= f.grouped_collection_select( :car_model_id, Brand.order,:car_models,:name ,:id, :name, include_blank: 'entekhab konid') %>
     <!--  help tag -->
     <%= grouped_collection_select :temp, :car_model_id, Brand.order,:car_models,:name ,:id, :name %>
-	 </p>
+	</p>
 	 	<p>
 	 	<%= f.label :year_from, "Year_from" %>
 	 	<%= f.select :year_from, 1990..2014, selected: 1990 %>
-	 </p>
+	</p>
 		<p>
 		 	<%= f.label :year_to, "Year_to" %>
 		 	<%= f.select :year_to, 2000..2014, selected: 2014 %>

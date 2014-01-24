@@ -1,10 +1,10 @@
 <h1>Listing ads</h1>
-
+<%= will_paginate(@ads , renderer: BootstrapPagination::Rails, class: "pagination pagination-sm", previous_label: "<<" , next_label: ">>") %>
 <table>
   <tr>
     <th>Brand</th>
     <th>Car model</th>
-    <th>User</th>
+    <th>User name</th>
     <th>Girbox</th>
     <th>Internal color</th>
     <th>Cover color</th>
@@ -25,10 +25,10 @@
   <tr>
     <td><%= ad.car_model.brand.name %></td>
     <td><%= ad.car_model.name %></td>
-    <td><%= ad.user.name %></td>
+    <td><%= ad.user.full_name %></td>
     <td><%= ad.girbox %></td>
-    <td><%= ad.internal_color.name %></td>
-    <td><%= ad.cover_color.name %></td>
+    <td><%= ad.try(:internal_color).try(:name) %></td>
+    <td><%= ad.try(:cover_color).try(:name) %></td>
     <td><%= ad.price %></td>
     <td><%= ad.fuel_type %></td>
     <td><%= ad.car_status %></td>

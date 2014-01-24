@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Galery name:</b>
   <%= @galery.galery_name %>
@@ -8,11 +6,6 @@
 <p>
   <b>User writer name:</b>
   <%= @galery.user_writer_name %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @galery.state_id %>
 </p>
 
 <p>
@@ -41,8 +34,13 @@
 </p>
 
 <p>
+  <b>State:</b>
+  <%= @galery.state_id %>
+</p>
+
+<p>
   <b>City:</b>
-  <%= @galery.city_id %>
+  <%= @galery.city.name %>
 </p>
 
 

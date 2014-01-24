@@ -1,5 +1,7 @@
 Bama::Application.routes.draw do
   
+  root :to => 'home#show'
+
   resources :search_ads , only: [:index]
   
   resources :galeries
@@ -13,12 +15,15 @@ Bama::Application.routes.draw do
 
   resources :ads
 
-
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'users' }
+  devise_scope :user do
+      get 'register', to: 'devise/registrations#new', as: :register
+      get 'login', to: 'devise/sessions#new', as: :login
+      resources :users, only: [:show, :index] do
+    end
+  end  # devise_for :users
 
   resources :car_colors
-
-  root :to => 'ads#index'
 
   resources :car_models
 

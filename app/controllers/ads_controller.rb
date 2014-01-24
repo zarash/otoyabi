@@ -1,8 +1,9 @@
 class AdsController < ApplicationController
+  before_filter :authenticate_user! , :except => [:show, :index]
   # GET /ads
   # GET /ads.json
   def index
-    @ads = Ad.all
+    @ads = Ad.paginate( :per_page => 3,:page => params[:page])#.order('created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,0 +1,16 @@
+	<div  class="container">
+	<ul class="nav nav-pills">
+		<li class="active"><a href="/">otoyabi</a></li>
+		<li><a href="/search_ads">search ads</a></li>
+		<ul class="nav navbar-nav navbar-right">
+			<% if current_user %>
+				<li><%= link_to "edit profile", edit_user_registration_path %></li>
+				<li><%= link_to current_user.first_name, @user %> </li>
+				<li><%= link_to "Log Out", destroy_user_session_path, method: :delete %> </li>
+			<% else %>
+				<li><%= link_to "Register", register_path %> </li>
+				<li><%= link_to "Log In", login_path %> </li>	
+			<% end %>
+		</ul>
+	</ul>	
+	</div>
