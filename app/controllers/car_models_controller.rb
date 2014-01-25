@@ -1,4 +1,5 @@
 class CarModelsController < ApplicationController
+  load_and_authorize_resource
   # GET /car_models
   # GET /car_models.json
   def index

@@ -1,4 +1,5 @@
 class BrandsController < ApplicationController
+  load_and_authorize_resource
   # GET /brands
   # GET /brands.json
   def index

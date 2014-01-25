@@ -68,6 +68,7 @@
   <%= @ad.view_count %>
 </p>
 
-
-<%= link_to 'Edit', edit_ad_path(@ad) %> |
+<% if can? :edit, @ad %>
+  <%= link_to 'Edit', edit_ad_path(@ad) %> |
+<% end %>
 <%= link_to 'Back', ads_path %>

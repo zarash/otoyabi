@@ -27,9 +27,18 @@
     <td><%= galery.manager_id %></td>
     <td><%= galery.state_id %></td>
     <td><%= galery.city.name %></td>
-    <td><%= link_to 'Show', galery %></td>
-    <td><%= link_to 'Edit', edit_galery_path(galery) %></td>
-    <td><%= link_to 'Destroy', galery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if can? :show, galery %>
+      <td><%= link_to 'Show', galery %></td>
+    <% end %>
+
+    <% if can? :edit, galery %>  
+      <td><%= link_to 'Edit', edit_galery_path(galery) %></td>
+    <% end %>  
+
+    <% if can? :destroy, galery %>
+      <td><%= link_to 'Destroy', galery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>  
+    
   </tr>
 <% end %>
 </table>

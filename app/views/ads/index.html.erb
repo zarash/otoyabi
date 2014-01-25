@@ -37,9 +37,17 @@
     <td><%= ad.exchange %></td>
     <td><%= ad.detail %></td>
     <td><%= ad.view_count %></td>
-    <td><%= link_to 'Show', ad %></td>
-    <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
-    <td><%= link_to 'Destroy', ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if can? :show, ad %>
+        <td><%= link_to 'Show', ad %></td>        
+    <% end %>
+
+    <% if can? :edit, ad %>
+        <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
+    <% end %>
+    
+    <% if can? :destroy, ad %>
+        <td><%= link_to 'Destroy', ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

@@ -1,5 +1,5 @@
 class UsersController < Devise::RegistrationsController
-
+  load_and_authorize_resource
   # layout 'application_user', only: [:show]
   
   # load_and_authorize_resource only: [:index, :show, :update, :edit]

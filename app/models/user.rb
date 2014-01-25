@@ -21,6 +21,13 @@ class User < ActiveRecord::Base
   
 
 
+  def admin?
+    if  self.email == 'zarash@yahoo.com'
+      true
+    else
+      false
+    end
+  end
 
   def full_name
     first_name + " " + last_name

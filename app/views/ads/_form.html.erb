@@ -78,7 +78,9 @@
     <%= f.check_box :exchange %>
   </div>
  
-    <button type="submit" class="btn btn-primary">create ad</button>
+    <% if can? :new, @ad %>
+      <button type="submit" class="btn btn-primary">create ad</button>      
+    <% end %>
     <%= link_to 'Back', ads_path, class: "btn btn-primary" %>
   
 <% end %>

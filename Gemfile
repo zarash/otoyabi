@@ -12,7 +12,7 @@ gem "awesome_print"
 gem 'will_paginate', '~> 3.0'
 gem "twitter-bootstrap-rails", "~> 2.2.8"
 gem 'will_paginate-bootstrap'
-
+gem "cancan"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

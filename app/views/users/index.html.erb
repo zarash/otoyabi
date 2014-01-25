@@ -21,9 +21,13 @@
     <td><%= user.mobile %></td>
     <td><%= user.created_at %></td>
     <td><%= user.updated_at %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_registration_path(user) %></td>
-
+    <% if can? :show, user %>
+      <td><%= link_to 'Show', user %></td>
+    <% end %>
+    
+    <% if can? :edit, user %>  
+      <td><%= link_to 'Edit', edit_user_registration_path %></td>
+    <% end %>
 
   </tr>
 <% end %>

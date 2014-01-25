@@ -1,4 +1,4 @@
-<%= form_for(@galery , html: {class: "form-horizontal col-sm-6"},url: galeries_path ) do |f| %>
+<%= form_for(@galery , html: {class: "form-horizontal col-sm-6"} ) do |f| %>
   <% if @galery.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@galery.errors.count, "error") %> prohibited this galery from being saved:</h2>
