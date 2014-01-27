@@ -46,6 +46,9 @@
       <%= f.grouped_collection_select( :city_id , State.order ,:cities,:name ,:id, :name, include_blank: 'entekhab konid') %>
     </div>  
   </div> 
+  
+  <% if can? :new, @galery %>    
+  <button type="submit" class="btn btn-primary">Update</button>
+  <% end %>
 
-   <button type="submit" class="btn btn-primary">Update</button>
 <% end %>
