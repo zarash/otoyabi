@@ -1,4 +1,5 @@
 class Galery < ActiveRecord::Base
-  attr_accessible :address, :city_id, :details, :email, :galery_name, :manager_id, :state_id, :tel, :user_writer_name
+  attr_accessible :address, :city_id, :details, :galery_name, :user_id, :state_id, :tel
   belongs_to :city
+  belongs_to :user
 end

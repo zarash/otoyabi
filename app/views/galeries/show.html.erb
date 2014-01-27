@@ -4,8 +4,8 @@
 </p>
 
 <p>
-  <b>User writer name:</b>
-  <%= @galery.user_writer_name %>
+  <b>user(manager):</b>
+  <%= @galery.user.full_name %>
 </p>
 
 <p>
@@ -19,28 +19,18 @@
 </p>
 
 <p>
-  <b>Email:</b>
-  <%= @galery.email %>
-</p>
-
-<p>
   <b>Details:</b>
   <%= @galery.details %>
 </p>
 
 <p>
-  <b>Manager:</b>
-  <%= @galery.manager_id %>
-</p>
-
-<p>
   <b>State:</b>
-  <%= @galery.state_id %>
+  <%= @galery.city.try(:state).try(:name) %>
 </p>
 
 <p>
   <b>City:</b>
-  <%= @galery.city.name %>
+  <%= @galery.try(:city).try(:name) %>
 </p>
 
 

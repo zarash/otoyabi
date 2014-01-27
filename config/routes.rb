@@ -22,9 +22,6 @@ Bama::Application.routes.draw do
       resources :users, only: [:show, :index] do
     end
   end  # devise_for :users
-
-  resources :car_colors
-
   resources :car_models
 
 

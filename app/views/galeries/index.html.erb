@@ -3,12 +3,10 @@
 <table>
   <tr>
     <th>Galery name</th>
-    <th>User writer name</th>
+    <th>user name</th>
     <th>Address</th>
     <th>Tel</th>
-    <th>Email</th>
     <th>Details</th>
-    <th>Manager</th>
     <th>State</th>
     <th>City</th>
     <th></th>
@@ -19,14 +17,12 @@
 <% @galeries.each do |galery| %>
   <tr>
     <td><%= galery.galery_name %></td>
-    <td><%= galery.user_writer_name %></td>
+    <td><%= galery.user.full_name %></td>
     <td><%= galery.address %></td>
     <td><%= galery.tel %></td>
-    <td><%= galery.email %></td>
     <td><%= galery.details %></td>
-    <td><%= galery.manager_id %></td>
-    <td><%= galery.state_id %></td>
-    <td><%= galery.city.name %></td>
+    <td><%= galery.city.try(:state).try(:name)%></td>
+    <td><%= galery.try(:city).try(:name) %></td>
     <% if can? :show, galery %>
       <td><%= link_to 'Show', galery %></td>
     <% end %>

@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>state</th>
     <th>Name</th>
     <th>Latitude</th>
     <th>Longitude</th>
@@ -12,6 +13,7 @@
 
 <% @cities.each do |city| %>
   <tr>
+    <td><%= city.state.name %></td>
     <td><%= city.name %></td>
     <td><%= city.latitude %></td>
     <td><%= city.longitude %></td>

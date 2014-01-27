@@ -47,12 +47,6 @@ ActiveRecord::Schema.define(:version => 20140126140604) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "car_colors", :force => true do |t|
-    t.string   "color"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "car_models", :force => true do |t|
     t.string   "name"
     t.integer  "brand_id"
@@ -77,17 +71,14 @@ ActiveRecord::Schema.define(:version => 20140126140604) do
   end
 
   create_table "galeries", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "city_id"
     t.string   "galery_name"
-    t.string   "user_writer_name"
-    t.integer  "state_id"
     t.string   "address"
     t.string   "tel"
-    t.string   "email"
     t.string   "details"
-    t.integer  "manager_id"
-    t.integer  "city_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "girboxes", :force => true do |t|
