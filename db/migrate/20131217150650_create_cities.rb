@@ -4,8 +4,8 @@ class CreateCities < ActiveRecord::Migration
       t.string :name
       t.float :latitude
       t.float :longitude
-
-      t.timestamps
+      t.belongs_to :state
+      t.timestamps 
     end
   end
 end

@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20140126140604) do
     t.string   "name"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "state_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
