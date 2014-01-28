@@ -1,4 +1,4 @@
-<%= form_for(@galery, html: {class: "form-horizontal col-sm-6"} ) do |f| %>
+<%= form_for(@galery, html: {class: "form-horizontal col-sm-6", :multipart => true } ) do |f| %>
   <% if @galery.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@galery.errors.count, "error") %> prohibited this galery from being saved:</h2>
@@ -46,7 +46,9 @@
       <%= f.grouped_collection_select( :city_id , State.order ,:cities,:name ,:id, :name, include_blank: 'entekhab konid') %>
     </div>  
   </div> 
-  
+  <div>
+    <%= f.file_field :photo %>
+  </div>
   <% if can? :new, @galery %>    
   <button type="submit" class="btn btn-primary">Update</button>
   <% end %>
