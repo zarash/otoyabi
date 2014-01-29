@@ -1,3 +1,4 @@
+<div class="ad">
 <p>
   <b>Brand:</b>
   <%= @ad.car_model.brand.name %>
@@ -67,8 +68,8 @@
   <b>View count:</b>
   <%= @ad.view_count %>
 </p>
-
 <% if can? :edit, @ad %>
   <%= link_to 'Edit', edit_ad_path(@ad) %> 
 <% end %>
 <%#= link_to 'Back', ads_path %>
+</div>

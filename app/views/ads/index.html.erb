@@ -1,6 +1,6 @@
 <h1>Listing ads</h1>
 <%= will_paginate(@ads , renderer: BootstrapPagination::Rails, class: "pagination pagination-sm", previous_label: "<<" , next_label: ">>") %>
-<table>
+<table  class="table table-striped">
   <tr>
     <th>Brand</th>
     <th>Car model</th>
@@ -54,5 +54,5 @@
 
 <br />
 
-<%= link_to 'New Ad', new_ad_path %>
+<%#= link_to 'New Ad', new_ad_path %>
 

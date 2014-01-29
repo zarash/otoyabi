@@ -8,11 +8,11 @@ class Ability
   if user.admin?
     can :manage, :all
   elsif user.email
-    can [:show, :index, :new, :create], Ad
+    can [:show,:new, :create], Ad
     can [:edit, :update, :destroy], Ad do |ad|
         user.id == ad.user_id
     end
-    can :read, [Ad, SearchAd]
+    can :read, SearchAd
 
     can :show, User
     can [:edit, :update, :destroy], User do |user|
@@ -24,7 +24,7 @@ class Ability
         user.id == galery.user_id
     end    
   else
-    can :read, [Ad, SearchAd]
+    can :read, SearchAd
 
     can :read, Galery
   end
