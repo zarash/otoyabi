@@ -1,4 +1,5 @@
-
+<div id:"user" class:"panel left">
+  <h3><%= @user.first_name %> profile</h3>
 <p>
   <b>first Name:</b>
   <%= @user.first_name %>
@@ -31,14 +32,16 @@
 
 <p>
   <b>created_at:</b>
-  <%= @user.created_at %>
+  <%= time_ago_in_words(@user.created_at) + " ago"  %>
 </p>
 
 <p>
-  <b>updated_at:</b>
-  <%= @user.updated_at %>
+  <b>updated_at:</b> 
+  <%= time_ago_in_words(@user.updated_at) + " ago"  %>
 </p>
 
-<%= link_to 'add new ad', new_ad_path %><br/>
-<%= link_to 'Edit profile', edit_user_registration_path %>
+<%#= link_to 'add new ad', new_ad_path %><br/>
+<%#= link_to 'Edit profile', edit_user_registration_path %>
 <%#= link_to 'Back', users_path %>
+  
+</div>

@@ -1,3 +1,18 @@
 body{
 	 margin-top: 60px;
 }
+
+.navbar-fixed-top{
+	background: #fff;
+	border:  #fff
+
+}
+
+.container{
+		margin:0 50px;
+	 background: none repeat scroll 0 0 #eee;
+	
+}
+#wrap{
+	padding: 30px
+}

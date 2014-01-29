@@ -9,7 +9,7 @@
 <body>
 	<%= render 'navbar' %>
 
-	<div class="container">
+	<div id="wrap" class="container">
 		<%# Rails flash messages styled for Twitter Bootstrap 3.0 %>
 		<% flash.each do |name, msg| %>
 	  	<% if msg.is_a?(String) %>
