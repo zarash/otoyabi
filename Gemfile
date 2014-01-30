@@ -11,6 +11,7 @@ gem "paperclip", "~> 3.0"
 gem "awesome_print"
 gem 'will_paginate', '~> 3.0'
 gem "twitter-bootstrap-rails", "~> 2.2.8"
+gem 'simple_form'
 gem 'will_paginate-bootstrap'
 gem "cancan"
 gem "imagemagick-identify", "~> 0.0.1"

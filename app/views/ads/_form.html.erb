@@ -1,4 +1,8 @@
-<div class="new-ads">
+<div id="new-ad-panel" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">new ad</h3>
+  </div>
+  <div class="panel-body">
 <%= form_for(@ad, html: {class: "form-horizontal col-sm-3"}) do |f| %>
   <% if @ad.errors.any? %>
     <div id="error_explanation">
@@ -83,6 +87,8 @@
       <button type="submit" class="btn btn-primary">update</button>      
     <% end %>
     <%#= link_to 'Back', ads_path, class: "btn btn-primary" %>
-  
+
 <% end %>
+
+ </div>
 </div>

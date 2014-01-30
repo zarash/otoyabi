@@ -1,4 +1,11 @@
-<%= form_for(@city, html: {class: "form-horizontal col-sm-4"}) do |f| %>
+
+<%= simple_form_for(@city, html: {class: "form-horizontal"},
+   defaults: {
+    input_html: { class: 'form-control' },
+    wrapper_html: { class: ' col-sm-10' },
+    label: false
+  }
+) do |f| %>
   <% if @city.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@city.errors.count, "error") %> prohibited this city from being saved:</h2>
@@ -11,30 +18,32 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :state_id ,class: "col-sm-2 control-label"%>
-    <div class="col-sm-10">
-      <%= f.collection_select(:state_id, State.all, :id, :name) %>
-    </div>  
+<div class="form-group  col-sm-10">
+  <%= f.label :state, "State", class: "col-sm-2 control-label" %>
+  <%= f.association :state  %>   
+</div>
+<div class="form-group  col-sm-10"> 
+  <%= f.label :name ,class: "col-sm-2 control-label"%>
+  <%= f.input :name %>
+</div>
+
+<div class="form-group  col-sm-10">  
+  <%= f.label :latitude ,class: "col-sm-2 control-label"%>
+  <%= f.input :latitude %>
+</div>
+
+<div class="form-group  col-sm-10">
+  <%= f.label :longitude ,class: "col-sm-2 control-label"%>
+  <%= f.input :longitude %>
+</div>
+
+  <div class="form-group  col-sm-10">
+    <div class=" col-sm-5 pull-left">      
+      <%= f.button :submit, class: "btn btn-block btn-primary" %>
+    </div>
+    <div class= "col-sm-5 pull-left">      
+   
+      <%= link_to 'Back', cities_path, class: "btn btn-block btn-primary" %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.label :name ,class: "col-sm-2 control-label"%>
-    <div class="col-sm-10">
-      <%= f.text_field :name ,class: "form-control"%>
-    </div> 
-  </div>
-  <div class="form-group">
-    <%= f.label :latitude ,class: "col-sm-2 control-label"%>
-    <div class="col-sm-10">
-      <%= f.text_field :latitude ,class: "form-control"%>
-    </div> 
-  </div>
-  <div class="form-group">
-    <%= f.label :longitude ,class: "col-sm-2 control-label"%>
-    <div class="col-sm-10">
-      <%= f.text_field :longitude ,class: "form-control"%>
-    </div> 
-  </div>
-  
-  <button type="submit" class="btn btn-primary">Update</button>
 <% end %>

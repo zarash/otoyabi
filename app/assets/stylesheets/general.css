@@ -20,7 +20,7 @@ body{
 	border: 1px solid #A2A09F
 
 }
-#main-content .panel-default{
+#main-content #search-ad-panel{
 	border: 1px solid black;
 	float: right;
 	width: 30%
