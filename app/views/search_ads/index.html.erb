@@ -1,7 +1,6 @@
-
 <%= render 'search_form' %>
-<%= will_paginate(@ads , renderer: BootstrapPagination::Rails, class: "pagination pagination-sm", previous_label: "<<" , next_label: ">>") %>
-<%#= @ads.size %> <hr>
+<%#= @ads.size %> 
+<div class="search-ads-index">
 <ul>
 	<% if @ads.any? %>
 		<% @ads.each do |ad| %>
@@ -11,15 +10,19 @@
 				<%= ad.year%><br>
 				<%= ad.detail%><br>
 				<%= time_ago_in_words(ad.updated_at) + " ago" %><br>
-				<%= ad.price %> <hr>
+				<%= ad.price %> 
 			</li>
 		<% end %>	
 	<% else %>	
 		<p>There is no record with this conditions.</p>
 	<% end %>
 </ul>
-
+</div>
+<div id="page">
+<%= will_paginate(@ads , renderer: BootstrapPagination::Rails, class: "pagination pagination-sm", previous_label: "<<" , next_label: ">>") %>
 <%#= (ap params).html_safe  %> <br>
 
 <%#= (ap @ads).html_safe  %> <br>
 <%#=@search_ad.inspect  %> <br>
+
+</div>
