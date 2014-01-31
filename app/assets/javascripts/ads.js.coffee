@@ -2,9 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
-	$('#ad_car_model_id').parent().hide()
+	# $('#ad_car_model_id').parent().hide()
 	car_models = $('#ad_car_model_id').html()
+	$('#ad_car_model_id').html('').attr("disabled", 'disabled')
 	$('#temp_brand_id').change ->
+		$('#ad_car_model_id').removeAttr("disabled")
 		brand = $('#temp_brand_id :selected').text()
 		options = $(car_models).filter("optgroup[label='#{brand}']").html()
 		if options
@@ -12,7 +14,7 @@ jQuery ->
 			$('#ad_car_model_id').parent().show()
 		else
 			$('#ad_car_model_id').empty()
-			$('#ad_car_model_id').parent().hide()
+			# $('#ad_car_model_id').parent().hide()
 
 	# make mileage disable
 	$('.mile').click ->
