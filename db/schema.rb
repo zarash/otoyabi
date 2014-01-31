@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(:version => 20140127214107) do
     t.string   "galery_name"
     t.string   "address"
     t.string   "tel"
-    t.string   "details"
+    t.string   "detail"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "photo_file_name"

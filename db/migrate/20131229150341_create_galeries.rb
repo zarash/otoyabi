@@ -6,7 +6,7 @@ class CreateGaleries < ActiveRecord::Migration
       t.string :galery_name
       t.string :address
       t.string :tel
-      t.string :details   
+      t.string :detail   
 
       t.timestamps
     end
