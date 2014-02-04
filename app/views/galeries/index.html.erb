@@ -20,7 +20,7 @@
     <td><%= galery.user.full_name %></td>
     <td><%= galery.address %></td>
     <td><%= galery.tel %></td>
-    <td><%= galery.details %></td>
+    <td><%= galery.detail %></td>
     <td><%= galery.city.try(:state).try(:name)%></td>
     <td><%= galery.try(:city).try(:name) %></td>
     <% if can? :show, galery %>

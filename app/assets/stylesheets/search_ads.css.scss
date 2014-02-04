@@ -1,25 +1,15 @@
 // Place all the styles related to the SearchAds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-#main-content  {
-	#search-ad-panel{
-		border:1px solid #A2A09F;
-	}
-	.search-ads-index{
-		float: right;
-		width: 60%;
-		padding: 30px;
-		ul{
-			list-style-type:none;
-			li{
-				border-bottom:1px solid #A2A09F;
-				padding: 10px;
-			}	
+#search_ads_index{
+	.panel{
+		padding: 20px;
+		.search_ads_raw{
+			border-bottom: 1px solid red;
+			padding: 10px;
+			&:hover,&:active{
+				background:#ddd;
+			}
 		}
 	}
-}
-
-#main-content .search-ads-index li .first{
-	border-top: 1px solid black;
 }

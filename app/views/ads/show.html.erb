@@ -21,12 +21,12 @@
 
 <p>
   <b>Internal color:</b>
-  <%= @ad.internal_color.name %>
+  <%= @ad.try(:internal_color).try(:name) %>
 </p>
 
 <p>
   <b>Cover color:</b>
-  <%= @ad.cover_color.name %>
+  <%= @ad.try(:cover_color).try(:name) %>
 </p>
 
 <p>

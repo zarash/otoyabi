@@ -1,3 +1,4 @@
+<div class="col-sm-3">
 <div id="user" class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title"><%= @user.first_name %> profile</h3>
@@ -36,6 +37,11 @@
 </p>
 
 <p>
+  <b>state:</b>
+  <%= @user.city.try(:state).try(:name) %>
+</p>
+
+<p>
   <b>city:</b>
   <%= @user.try(:city).try(:name) %>
 </p>
@@ -62,3 +68,6 @@
 <%#= link_to 'Back', users_path %>
   </div>
 </div>
+</div>
+
+     

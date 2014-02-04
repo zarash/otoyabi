@@ -1,28 +1,34 @@
-<%= render 'search_form' %>
-<%#= @ads.size %> 
-<div class="search-ads-index">
-<ul>
-	<% if @ads.any? %>
-		<% @ads.each do |ad| %>
-			<li> 
-				<%= link_to( ad.car_model.brand.name, ad) %><br>
-				<%= ad.car_model.name %><br>
-				<%= ad.year%><br>
-				<%= ad.detail%><br>
-				<%= time_ago_in_words(ad.updated_at) + " ago" %><br>
-				<%= ad.price %> 
-			</li>
-		<% end %>	
-	<% else %>	
-		<p>There is no record with this conditions.</p>
-	<% end %>
-</ul>
-</div>
-<div id="page">
-<%= will_paginate(@ads , renderer: BootstrapPagination::Rails, class: "pagination pagination-sm", previous_label: "<<" , next_label: ">>") %>
-<%#= (ap params).html_safe  %> <br>
+<div id="search_ads_index">
+	<%= render 'search_form' %>
+	<%#= @ads.size %> 
+	<div class="content col-sm-10 col-lg-8">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<% if @ads.any? %>
+					<% @ads.each do |ad| %>
+						<a href="<%= ad_path(ad.id) %>">
+							<div class="row search_ads_raw"> 
+								<%#= link_to( ad.car_model.brand.name, ad) %>
+								<%= ad.car_model.name %><br>
+								<%= ad.year%><br>
+								<%= ad.detail%><br>
+								<%= time_ago_in_words(ad.updated_at) + " ago" %><br>
+								<%= ad.price %> 
+							</div>
+						</a>
+					<% end %>	
+				<% else %>	
+					<p>There is no record with this conditions.</p>
+				<% end %>
 
-<%#= (ap @ads).html_safe  %> <br>
-<%#=@search_ad.inspect  %> <br>
+				<div id="page">
+					<%= will_paginate(@ads , renderer: BootstrapPagination::Rails, class: "pagination pagination-sm", previous_label: "<<" , next_label: ">>") %>
+					<%#= (ap params).html_safe  %> <br>
 
+					<%#= (ap @ads).html_safe  %> <br>
+					<%#=@search_ad.inspect  %> <br>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

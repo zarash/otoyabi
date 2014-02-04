@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(:version => 20140127214107) do
     t.string   "tel"
     t.string   "mobile"
     t.integer  "city_id"
+    t.integer  "state_id"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

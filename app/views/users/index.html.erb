@@ -6,7 +6,8 @@
     <th>last Name</th>
     <th>email</th>
     <th>tel</th>
-    <th>city name</th>
+    <th>state</th>
+    <th>city</th>
     <th>mobile</th>
     <th>created_at</th>
     <th>updated_at</th>
@@ -17,6 +18,7 @@
     <td><%= user.last_name %></td>
     <td><%= user.email %></td>
     <td><%= user.tel %></td>
+    <td><%= user.try(:state).try(:name) %></td>
     <td><%= user.try(:city).try(:name) %></td>
     <td><%= user.mobile %></td>
     <td><%= user.created_at %></td>
