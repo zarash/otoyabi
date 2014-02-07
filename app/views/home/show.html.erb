@@ -1,6 +1,30 @@
-<h1>welcome to otoyabi.com</h1>
-<div class="wrapper">
-	<%= image_tag( image_path("bmw1.jpg"), height: '432', width: '432') %>
+<%#= render "devise/sessions/login_form" %>
+<div class="col-sm-4">
+<div id="myCarousel" class="carousel hidden-sm slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+		<li class="active" data-slide-to="0" data-target="#carousel-example-generic"></li>
+		<li class="" data-slide-to="1" data-target="#carousel-example-generic"></li>
+		<li class="" data-slide-to="2" data-target="#carousel-example-generic"></li>
+	</ol>
+	<!-- Wrapper for slides -->
+	<section class="carousel-inner">
+		<div class="item active">
+			<%= image_tag( image_path("bmw3con_2.jpg")) %>
+		</div>
+		<div class="item">
+			<%= image_tag( image_path("alfa.jpg")) %>
+		</div>
+		<div class="item">
+			<%= image_tag( image_path("bmw1.jpg")) %>
+		</div>
+	</section>
+	<!-- Controls -->
+	<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+	<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
 </div>
 
-<%#= render "devise/sessions/login_form" %>
+</div>

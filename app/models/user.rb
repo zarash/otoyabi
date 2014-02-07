@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   belongs_to :city
   has_many :ads
-  has_many :galeries
+  has_many :user_galery_relationships
+  has_many :galeries, :through => :user_galery_relationships
 
   
   # Include default devise modules. Others available are:

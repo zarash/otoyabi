@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140127214107) do
+ActiveRecord::Schema.define(:version => 20140206203230) do
 
   create_table "ad_images", :force => true do |t|
     t.string   "image_file_name"
@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(:version => 20140127214107) do
   end
 
   create_table "galeries", :force => true do |t|
-    t.integer  "user_id"
     t.integer  "city_id"
     t.string   "galery_name"
     t.string   "address"
@@ -96,6 +95,17 @@ ActiveRecord::Schema.define(:version => 20140127214107) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "user_galery_relationships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "galery_id"
+    t.string   "user_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "user_galery_relationships", ["galery_id"], :name => "index_user_galery_relationships_on_galery_id"
+  add_index "user_galery_relationships", ["user_id"], :name => "index_user_galery_relationships_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

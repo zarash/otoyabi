@@ -43,7 +43,7 @@ class GaleriesController < ApplicationController
   # POST /galeries.json
   def create
     @galery = Galery.new(params[:galery])
-    @galery.user = current_user
+    @galery.users << current_user
 
     respond_to do |format|
       if @galery.save

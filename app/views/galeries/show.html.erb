@@ -1,42 +1,58 @@
-<p>
-  <%= image_tag  @galery.photo.url(:large) %>
-</p>
+<div class="col-sm-3 galery_show">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= @galery.galery_name %> galery</h3>
+    </div>
+    <div class="panel-body">
+      <p>
+        <b>Galery name:</b>
+        <%= @galery.galery_name %>
+      </p>
 
-<p>
-  <b>Galery name:</b>
-  <%= @galery.galery_name %>
-</p>
+      <p>
+        <b>manager:</b>
+        <%= @galery.users.first.full_name %>
+      </p>
 
-<p>
-  <b>user(manager):</b>
-  <%= @galery.user.full_name %>
-</p>
+      <p>
+        <b>Address:</b>
+        <%= @galery.address %>
+      </p>
 
-<p>
-  <b>Address:</b>
-  <%= @galery.address %>
-</p>
+      <p>
+        <b>Tel:</b>
+        <%= @galery.tel %>
+      </p>
 
-<p>
-  <b>Tel:</b>
-  <%= @galery.tel %>
-</p>
+      <p>
+        <b>Details:</b>
+        <%= @galery.detail %>
+      </p>
+    </div>
+  </div> 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"> Location </h3>
+    </div>
+    <div class="panel-body">
+      <p>
+        <b>State:</b>
+        <%= @galery.city.try(:state).try(:name) %>
+      </p>
 
-<p>
-  <b>Details:</b>
-  <%= @galery.detail %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @galery.city.try(:state).try(:name) %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @galery.try(:city).try(:name) %>
-</p>
+      <p>
+        <b>City:</b>
+        <%= @galery.try(:city).try(:name) %>
+      </p>
 
 
-<%= link_to 'Edit', edit_galery_path(@galery) %>
-<%#= link_to 'Back', galeries_path %>
+  <%= link_to 'Edit', edit_galery_path(@galery) %>
+  <%#= link_to 'Back', galeries_path %>
+    </div>
+  </div>
+</div>
+<div class="col-sm-8">
+  <p>
+    <%= image_tag  @galery.photo.url(:xlarge) %>
+  </p>
+</div>
