@@ -12,7 +12,8 @@ class Galery < ActiveRecord::Base
 			:small  => "80x80>",
 			:medium => "140x140>",
 			:large =>   "300x300>",
-      :xlarge => "600x600>" },
+      :xlarge => "600x600>",
+      :xxlarge => "800x400>" },
 			:default_url => "/public/assets/galeries/default-pic.jpeg"
 end
    # styles: lambda { |a| {:thumb => "48x48#", :square => "160x160#"} if a.instance.is_image? },

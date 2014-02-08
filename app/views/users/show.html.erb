@@ -69,5 +69,15 @@
     </div>
   </div>
 </div>
-
+<div class="col-sm-8">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">all <%= @user.first_name %> ads</h3>
+    </div>
+    <div class="panel-body">
+      <%= @user.ads.each do |ad| %>
+        <p><%= ad %></p>
+      <% end %>
+    </div>
+</div>
      

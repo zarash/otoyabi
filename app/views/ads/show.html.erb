@@ -1,75 +1,85 @@
-<div class="ad-show">
-<p>
-  <b>Brand:</b>
-  <%= @ad.car_model.brand.name %>
-</p>
+<div class="ad-show col-sm-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">ad show</h3>
+    </div>
+    <div class="panel-body">
+      <p>
+        <b>Brand:</b>
+        <%= @ad.car_model.brand.name %>
+      </p>
 
-<p>
-  <b>Car model:</b>
-  <%= @ad.car_model.name %>
-</p>
+      <p>
+        <b>Car model:</b>
+        <%= @ad.car_model.name %>
+      </p>
 
-<p>
-  <b>User:</b>
-  <%#= @ad.user.name %>
-</p>
+      <p>
+        <b>User:</b>
+        <%#= @ad.user.name %>
+      </p>
 
-<p>
-  <b>Girbox:</b>
-  <%= @ad.girbox %>
-</p>
+      <p>
+        <b>Girbox:</b>
+        <%= @ad.girbox %>
+      </p>
 
-<p>
-  <b>Internal color:</b>
-  <%= @ad.try(:internal_color).try(:name) %>
-</p>
+      <p>
+        <b>Internal color:</b>
+        <%= @ad.try(:internal_color).try(:name) %>
+      </p>
 
-<p>
-  <b>Cover color:</b>
-  <%= @ad.try(:cover_color).try(:name) %>
-</p>
+      <p>
+        <b>Cover color:</b>
+        <%= @ad.try(:cover_color).try(:name) %>
+      </p>
 
-<p>
-  <b>Price:</b>
-  <%= @ad.price %>
-</p>
+      <p>
+        <b>Price:</b>
+        <%= @ad.price %>
+      </p>
 
-<p>
-  <b>Fuel type:</b>
-  <%= @ad.fuel_type %>
-</p>
+      <p>
+        <b>Fuel type:</b>
+        <%= @ad.fuel_type %>
+      </p>
 
-<p>
-  <b>car status:</b>
-  <%= @ad.car_status %>
-</p>
+      <p>
+        <b>car status:</b>
+        <%= @ad.car_status %>
+      </p>
 
-<p>
-  <b>Mileage:</b>
-  <%= @ad.mileage %>
-</p>
+      <p>
+        <b>Mileage:</b>
+        <%= @ad.mileage %>
+      </p>
 
-<p>
-  <b>Year:</b>
-  <%= @ad.year %>
-</p>
+      <p>
+        <b>Year:</b>
+        <%= @ad.year %>
+      </p>
 
-<p>
-  <b>exchange:</b>
-  <%= @ad.exchange %>
-</p>
+      <p>
+        <b>exchange:</b>
+        <%= @ad.exchange %>
+      </p>
 
-<p>
-  <b>Detail:</b>
-  <%= @ad.detail %>
-</p>
+      <p>
+        <b>Detail:</b>
+        <%= @ad.detail %>
+      </p>
 
-<p>
-  <b>View count:</b>
-  <%= @ad.view_count %>
-</p>
-<% if can? :edit, @ad %>
-  <%= link_to 'Edit', edit_ad_path(@ad) %> 
-<% end %>
-<%#= link_to 'Back', ads_path %>
+      <p>
+        <b>View count:</b>
+        <%= @ad.view_count %>
+      </p>
+
+    </div>
+    <div id="ad-edit">  
+      <% if can? :edit, @ad %>
+        <%= link_to 'Edit', edit_ad_path(@ad) %> 
+      <% end %>
+      <%#= link_to 'Back', ads_path %>
+    </div> 
+  </div>
 </div>

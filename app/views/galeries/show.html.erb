@@ -51,8 +51,18 @@
     </div>
   </div>
 </div>
-<div class="col-sm-8">
+<div class="col-sm-9">
   <p>
-    <%= image_tag  @galery.photo.url(:xlarge) %>
+    <%= image_tag  @galery.photo.url(:xxlarge) %>
   </p>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= @galery.galery_name %> galery ads </h3>
+    </div>
+    <div class="panel-body">
+      <%= @galery.users.first.ads.each do |ad| %>
+        <p><%= ad %></p>
+      <% end %>
+    </div>  
+
 </div>
