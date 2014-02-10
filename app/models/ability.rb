@@ -21,7 +21,7 @@ class Ability
 
     can [:show, :index, :new, :create], Galery
     can [:edit, :update, :destroy], Galery do |galery|
-        user.id == galery.user_id
+        user == galery.manager
     end    
   else
     can :read, SearchAd

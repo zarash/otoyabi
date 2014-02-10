@@ -75,9 +75,9 @@
       <h3 class="panel-title">all <%= @user.first_name %> ads</h3>
     </div>
     <div class="panel-body">
-      <%= @user.ads.each do |ad| %>
-        <p><%= ad %></p>
+      <% @user.ads.each do |ad| %>
+        <p><%= ad.id %></p>
       <% end %>
+
     </div>
-</div>
-     
+</div>    

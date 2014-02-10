@@ -14,7 +14,11 @@ class Galery < ActiveRecord::Base
 			:large =>   "300x300>",
       :xlarge => "600x600>",
       :xxlarge => "800x400>" },
-			:default_url => "/public/assets/galeries/default-pic.jpeg"
+			:default_url => "/app/assets/images/bmw3con_2.jpg"
+
+  def manager
+    self.user_galery_relationships.where(user_type: "manager").try(:first).try(:user)
+  end
 end
    # styles: lambda { |a| {:thumb => "48x48#", :square => "160x160#"} if a.instance.is_image? },
 

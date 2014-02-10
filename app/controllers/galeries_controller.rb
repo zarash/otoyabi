@@ -42,11 +42,16 @@ class GaleriesController < ApplicationController
   # POST /galeries
   # POST /galeries.json
   def create
-    @galery = Galery.new(params[:galery])
-    @galery.users << current_user
+    relation = UserGaleryRelationship.new
+    relation.user = current_user
 
+    relation.user_type = 'manager'
+    @galery = Galery.new(params[:galery])
+    relation.galery = @galery
+    
     respond_to do |format|
       if @galery.save
+        relation.save
         format.html { redirect_to @galery, notice: 'Galery was successfully created.' }
         format.json { render json: @galery, status: :created, location: @galery }
       else
