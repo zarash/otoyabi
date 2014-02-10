@@ -75,8 +75,12 @@
       <h3 class="panel-title">all <%= @user.first_name %> ads</h3>
     </div>
     <div class="panel-body">
-      <% @user.ads.each do |ad| %>
-        <p><%= ad.id %></p>
+      <% if @user.ads.any? %>
+        <% @user.ads.each do |ad| %>
+          <p><%= ad.id %></p>
+        <% end %>
+      <% else %>  
+        <p>There is no record with this conditions.</p>
       <% end %>
 
     </div>
