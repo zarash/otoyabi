@@ -7,13 +7,21 @@
 				<% if @ads.any? %>
 					<% @ads.each do |ad| %>
 						<a href="<%= ad_path(ad.id) %>">
-							<div class="row search_ads_raw"> 
-								<%#= link_to( ad.car_model.brand.name, ad) %>
-								<%= ad.car_model.name %><br>
-								<%= ad.year%><br>
-								<%= ad.detail%><br>
-								<%= time_ago_in_words(ad.updated_at) + " ago" %><br>
-								<%= ad.price %> 
+							<div id="search_ads_raw" class="row"> 
+								<div class="ad-pic col-sm-3">
+									pic place
+								</div>
+								<div class="ad-info col-sm-3">
+									<%= ad.car_model.name %><br>
+									<%= ad.year%><br>
+									<%= ad.detail%><br>
+								</div>
+								<div class="ad-date col-sm-3">	
+									<%= time_ago_in_words(ad.updated_at) + " ago" %>
+								</div>	
+								<div class="ad-price col-sm-3">	
+									<%= ad.price %>
+								</div>	 
 							</div>
 						</a>
 					<% end %>	

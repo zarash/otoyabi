@@ -1,63 +1,98 @@
-<div class="col-sm-3 galery_show">
+<div class="col-sm-4 galery_show">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title"><%= @galery.galery_name %> galery</h3>
     </div>
     <div class="panel-body">
-      <p>
-        <b>Galery name:</b>
-        <%= @galery.galery_name %>
-      </p>
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="col-xs-5 control-label">GaleryName</label>
+            <div class="col-xs-7"> 
+              <p class="form-control-static">
+                <%= @galery.galery_name %>
+              </p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="col-xs-5 control-label">manager</label>
+            <div class="col-xs-7"> 
+              <p class="form-control-static">
+                <%= @galery.manager.full_name %>
+              </p>
+            </div>
+        </div>
 
-      <p>
-        <b>manager:</b>
-        <%= @galery.manager.full_name %>
-      </p>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">Address</label>
+            <div class="col-xs-7"> 
+              <p class="form-control-static">
+                <%= @galery.address %>
+              </p>
+            </div>
+        </div>
 
-      <p>
-        <b>Address:</b>
-        <%= @galery.address %>
-      </p>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">Tel</label>
+            <div class="col-xs-7"> 
+              <p class="form-control-static">
+                <%= @galery.tel %>
+              </p>
+            </div>
+        </div>
 
-      <p>
-        <b>Tel:</b>
-        <%= @galery.tel %>
-      </p>
-
-      <p>
-        <b>Details:</b>
-        <%= @galery.detail %>
-      </p>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">Details</label>
+            <div class="col-xs-7"> 
+              <p class="form-control-static">
+                <%= @galery.detail %>
+              </p>
+            </div>
+        </div>
+    </form>
     </div>
   </div> 
+
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title"> Location </h3>
     </div>
     <div class="panel-body">
-      <p>
-        <b>State:</b>
-        <%= @galery.city.try(:state).try(:name) %>
-      </p>
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="col-xs-5 control-label">State</label>
+            <div class="col-xs-7"> 
+              <p class="form-control-static">
+                <%= @galery.city.try(:state).try(:name) %>
+              </p>
+            </div>
+        </div>
 
-      <p>
-        <b>City:</b>
-        <%= @galery.try(:city).try(:name) %>
-      </p>
-
-
-  <%= link_to 'Edit', edit_galery_path(@galery) %>
-  <%#= link_to 'Back', galeries_path %>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">City</label>
+            <div class="col-xs-7"> 
+              <p class="form-control-static">
+                <%= @galery.try(:city).try(:name) %>
+              </p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="col-xs-5 control-label">
+            <%= link_to 'Edit', edit_galery_path(@galery) %>
+            <%#= link_to 'Back', galeries_path %>
+          </label>
+        </div>
+      </form>
     </div>
   </div>
 </div>
-<div class="col-sm-9">
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <p>
-        <%= image_tag  @galery.photo.url(:xxlarge) %>
-      </p>
-    </div>
+
+<div id="leftContent" class="col-sm-8">
+  <div id="cover">
+    <div class="coverImage">
+      <img class="img-responsive" src="http://s3-eu-west-1.amazonaws.com/hamsafaryab.production/static_files/images/default_cover.jpg" >
+    </div>  
   </div>
   <div class="panel panel-default">
     <div class="panel-heading">

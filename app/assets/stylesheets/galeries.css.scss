@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.panel-body b{
-	float: right;
+.panel-body {
+	padding: 15px;
+}
+
+#cover{
+margin-bottom: 45px;
+}
+.form-sign-in-up {
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 15px;
 }

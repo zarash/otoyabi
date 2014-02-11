@@ -4,25 +4,34 @@
 #search_ads_index{
 	.panel{
 		padding: 20px;
-		.search_ads_raw{
+		#search_ads_raw{
+			display: block;
 			border-bottom: 1px solid #EEE;
 			padding: 10px;
 			&:hover,&:active{
 				background:#dEE;
+			}
+			.col-sm-3{
+				width: 25%;
+			}
+			.ad-info{
+				border-left: 1px solid #EEE;
+				border-right: 1px solid #EEE;
+			}
+			.ad-date{
+				border-left: 1px solid #EEE;
+
 			}
 		}
 	}
 }
 
 #user_show {
-	.panel{
-		padding: 20px;
 		.search_ads_raw{
 			border-bottom: 1px solid #EEE;
 			padding: 10px;
 			&:hover,&:active{
-				background:#EEd;
+				background:#F9F9F9;
 			}
 		}
 	}
-}
