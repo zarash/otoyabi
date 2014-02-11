@@ -4,82 +4,143 @@
       <h3 class="panel-title">ad show</h3>
     </div>
     <div class="panel-body">
-      <p>
-        <b>Brand:</b>
-        <%= @ad.car_model.brand.name %>
-      </p>
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="col-xs-5 control-label">Brand</label>
+          <div class="col-xs-7">
+            <p class="form-control-static">
+              <strong>
+                  <small class="text-success activity"><%= @ad.car_model.brand.name %></small>
+              </strong>
+            </p>
+          </div>
+        </div>
 
-      <p>
-        <b>Car model:</b>
-        <%= @ad.car_model.name %>
-      </p>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">Car model</label>
+          <div class="col-xs-7">
+            <p class="form-control-static">
+              <%= @ad.car_model.name %>
+            </p>
+          </div>
+        </div>
 
-      <p>
-        <b>User:</b>
-        <%#= @ad.user.name %>
-      </p>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">user</label>
+          <div class="col-xs-7">
+            <p class="form-control-static">
+              <%#= @ad.user.name %>
+            </p>
+          </div>
+        </div>
 
-      <p>
-        <b>Girbox:</b>
-        <%= @ad.girbox %>
-      </p>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">Girbox</label>
+          <div class="col-xs-7">
+            <p class="form-control-static">
+              <%= @ad.girbox %>
+            </p>
+          </div>
+        </div>
 
-      <p>
-        <b>Internal color:</b>
-        <%= @ad.try(:internal_color).try(:name) %>
-      </p>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">Internal color</label>
+          <div class="col-xs-7">
+            <p class="form-control-static">
+              <%= @ad.try(:internal_color).try(:name) %>
+            </p>
+          </div>
+        </div>
 
-      <p>
-        <b>Cover color:</b>
-        <%= @ad.try(:cover_color).try(:name) %>
-      </p>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">Cover color</label>
+          <div class="col-xs-7">
+            <p class="form-control-static">
+              <%= @ad.try(:cover_color).try(:name)  %>
+            </p>
+          </div>
+        </div>
 
-      <p>
-        <b>Price:</b>
-        <%= @ad.price %>
-      </p>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">Price</label>
+          <div class="col-xs-7">
+            <p class="form-control-static">
+              <%= @ad.price %>
+            </p>
+          </div>
+        </div>
 
-      <p>
-        <b>Fuel type:</b>
-        <%= @ad.fuel_type %>
-      </p>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">Fuel type</label>
+          <div class="col-xs-7">
+            <p class="form-control-static">
+              <%= @ad.fuel_type %>
+            </p>
+          </div>
+        </div>
 
-      <p>
-        <b>car status:</b>
-        <%= @ad.car_status %>
-      </p>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">car status</label>
+          <div class="col-xs-7">
+            <p class="form-control-static">
+              <%= @ad.car_status %>
+            </p>
+          </div>
+        </div>
 
-      <p>
-        <b>Mileage:</b>
-        <%= @ad.mileage %>
-      </p>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">Mileage</label>
+          <div class="col-xs-7">
+            <p class="form-control-static">
+              <%= @ad.mileage %>
+            </p>
+          </div>
+        </div>
 
-      <p>
-        <b>Year:</b>
-        <%= @ad.year %>
-      </p>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">Year</label>
+          <div class="col-xs-7">
+            <p class="form-control-static">
+              <%= @ad.year %>
+            </p>
+          </div>
+        </div>
 
-      <p>
-        <b>exchange:</b>
-        <%= @ad.exchange %>
-      </p>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">exchange</label>
+          <div class="col-xs-7">
+            <p class="form-control-static">
+              <%= @ad.exchange %>
+            </p>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="col-xs-5 control-label">Detail</label>
+          <div class="col-xs-7">
+            <p class="form-control-static">
+              <%= @ad.detail %>
+            </p>
+          </div>
+        </div>
 
-      <p>
-        <b>Detail:</b>
-        <%= @ad.detail %>
-      </p>
+        <div class="form-group">
+          <label class="col-xs-5 control-label">View count</label>
+          <div class="col-xs-7">
+            <p class="form-control-static">
+              <%= @ad.view_count %>
+            </p>
+          </div>
+        </div>
 
-      <p>
-        <b>View count:</b>
-        <%= @ad.view_count %>
-      </p>
-
-    </div>
-    <div id="ad-edit">  
-      <% if can? :edit, @ad %>
-        <%= link_to 'Edit', edit_ad_path(@ad) %> 
-      <% end %>
-      <%#= link_to 'Back', ads_path %>
-    </div> 
+      <div class="form-group">
+          <label class="col-xs-5 control-label">
+          <% if can? :edit, @ad %>
+            <%= link_to 'Edit', edit_ad_path(@ad) %> 
+          <% end %>
+          <%#= link_to 'Back', ads_path %>
+          </label> 
+      </div> 
+    </form>
   </div>
 </div>
